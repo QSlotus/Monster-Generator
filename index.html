@@ -2,22 +2,15 @@
 <html>
 <head>
 <meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width initial-scale=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
 <title>怪物生成</title>
 <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 <link href="./assets/css/typora.css" rel="stylesheet">
-</head>
-<body class='typora-export os-windows'>
-<div id='write' class=''>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>怪物生成器</title>
-<script src="./assets/js/import.js"></script>
 <style>
     body {
         /* font-family: Arial, sans-serif; */
         text-align: center;
+        transition: background-color 0.3s, color 0.3s;
     }
     .selector {
         margin: 20px;
@@ -34,9 +27,32 @@
         display: block;
         margin-bottom: 10px;
     }
+    .night-mode {
+        background-color: #121212;
+        color: #e0e0e0;
+    }
+    .night-mode button, .night-mode input, .night-mode select {
+        background-color: #333;
+        color: #e0e0e0;
+        border: 1px solid #444;
+    }
+    .night-mode #copyButton {
+        background-color: #444;
+    }
+    .night-mode hr {
+        border-color: #444;
+    }
 </style>
+</head>
+<body class='typora-export os-windows'>
+<div id='write' class=''>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>怪物生成器</title>
+<script src="./assets/js/import.js"></script>
 <h1>怪物生成</h1>
+<button id="modeToggle">切换夜间模式</button>
 <!-- <p><b>* 由于【局内战斗怪物】数量过多，请耐心等待加载</b></p> -->
 <select id="monsterSelect" class="selector">
 <option value="">选择局外显示怪物</option>
@@ -60,8 +76,11 @@
     <button id="copyButton"><b>复制指令</b></button>
 </div>
 <script src="./assets/js/command.js"></script>
-</body>
-</html>
+<script>
+    document.getElementById('modeToggle').addEventListener('click', function() {
+        document.body.classList.toggle('night-mode');
+    });
+</script>
 </div>
 <center><hr width="500"></center>
 <p>&copy; 2024 Design By QiuSYan</p>
