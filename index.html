@@ -1,13 +1,14 @@
 <!doctype html>
 <html>
 <head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width initial-scale=1'>
 <title>怪物生成</title>
 <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
 <link href="./assets/css/typora.css" rel="stylesheet">
 </head>
 <body class='typora-export os-windows'>
-<div id='write'  class=''>
+<div id='write' class=''>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,14 +24,15 @@
     }
     #parameterInputs {
         margin-top: 20px;
-        display: flex;
-        justify-content: center;
+        display: block;
+        text-align: left;
+        max-width: 200px;
+        margin-left: auto;
+        margin-right: auto;
     }
-    #parameterInputs input {
-        margin: 0 10px;
-    }
-    #parameterInputs label {
-        margin-right: 10px;
+    #parameterInputs label, #parameterInputs input {
+        display: block;
+        margin-bottom: 10px;
     }
 </style>
 
@@ -39,28 +41,31 @@
 <select id="monsterSelect" class="selector">
 <option value="">选择局外显示怪物</option>
 <!-- 动态插入局外显示怪物的选项 -->
-</select><select id="stageSelect" class="selector">
+</select>
+<select id="stageSelect" class="selector">
 <option value="">选择局内战斗怪物</option>
 <!-- 动态插入局内战斗怪物的选项 -->
-</select><div id="parameterInputs">
-<label for="quantityInput">数量：</label>
-<input type="number" id="quantityInput" placeholder="数量" value="1">
-<br/>
-<label for="levelInput">等级：</label>
-<input type="number" id="levelInput" placeholder="等级" value="80">
-<br/>
-<label for="radiusInput">半径：</label>
-<input type="number" id="radiusInput" placeholder="半径" value="1">
-<br/>
-</div><p><button id="pairButton"><b><span>生成指令</span></b></button></p><div id="result">
-<input type="text" id="commandBox" readonly="">
-<button id="copyButton"><b>复制指令</b></button>
-</div><script src="./assets/js/command.js"></script></body>
-</html></div>
+</select>    
+<div id="parameterInputs">
+    <label for="quantityInput">数量：</label>
+    <input type="number" id="quantityInput" placeholder="数量" value="1" />
+    <label for="levelInput">等级：</label>
+    <input type="number" id="levelInput" placeholder="等级" value="80" />
+    <label for="radiusInput">半径：</label>
+    <input type="number" id="radiusInput" placeholder="半径" value="1" />
+</div>
+<p><button id="pairButton"><b><span>生成指令</span></b></button></p>
+<div id="result">
+    <input type="text" id="commandBox" readonly="">
+    <button id="copyButton"><b>复制指令</b></button>
+</div>
+<script src="./assets/js/command.js"></script>
+</body>
+</html>
+</div>
 <center><hr width="500"></center>
 <p>&copy; 2024 Design By QiuSYan</p>
 <p>Have Fun!</p>
-
 
 </body>
 </html>
