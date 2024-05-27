@@ -3,9 +3,11 @@ body {
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
 }
+
 .selector {
     margin: 20px;
 }
+
 #parameterInputs {
     margin-top: 20px;
     display: block;
@@ -14,22 +16,30 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-#parameterInputs label, #parameterInputs input {
+
+#parameterInputs label,
+#parameterInputs input {
     display: block;
     margin-bottom: 10px;
 }
+
 .night-mode {
     background-color: #121212;
     color: #e0e0e0;
 }
-.night-mode button, .night-mode input, .night-mode select {
+
+.night-mode button,
+.night-mode input,
+.night-mode select {
     background-color: #333;
     color: #e0e0e0;
     border: 1px solid #444;
 }
+
 .night-mode #copyButton {
     background-color: #444;
 }
+
 .night-mode hr {
     border-color: #444;
 }

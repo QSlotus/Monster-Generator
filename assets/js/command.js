@@ -15,18 +15,18 @@ radiusInput.addEventListener('input', updateCommand);
 
 // 更新结果框中的指令
 function updateCommand() {
-  const selectedMonster = monsterSelect.value;
-  const selectedStage = stageSelect.value;
-  const quantity = quantityInput.value;
-  const level = levelInput.value;
-  const radius = radiusInput.value;
+    const selectedMonster = monsterSelect.value;
+    const selectedStage = stageSelect.value;
+    const quantity = quantityInput.value;
+    const level = levelInput.value;
+    const radius = radiusInput.value;
 
-  if (selectedMonster && selectedStage && quantity && level && radius) {
-    const command = `/spawn ${selectedMonster} s${selectedStage} x${quantity} lv${level} r${radius}`;
-    commandBox.value = command;
-  } else {
-    commandBox.value = '';
-  }
+    if (selectedMonster && selectedStage && quantity && level && radius) {
+        const command = `/spawn ${selectedMonster} s${selectedStage} x${quantity} lv${level} r${radius}`;
+        commandBox.value = command;
+    } else {
+        commandBox.value = '';
+    }
 }
 
 // 初始化结果框为空
@@ -34,7 +34,7 @@ commandBox.value = '';
 
 // 复制指令功能
 document.getElementById('copyButton').addEventListener('click', () => {
-  commandBox.select();
-  document.execCommand('copy');
-  alert('指令已复制到剪贴板！');
+    commandBox.select();
+    document.execCommand('copy');
+    alert('指令已复制到剪贴板！');
 });
