@@ -1,98 +1,72 @@
 <!doctype html>
 <html>
+
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1'>
-<title>怪物生成</title>
-<script src="./assets/js/import.js"></script>
-<link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
-<link href="./assets/css/typora.css" rel="stylesheet">
-<style>
-    body {
-        /* font-family: Arial, sans-serif; */
-        text-align: center;
-        transition: background-color 0.3s, color 0.3s;
-    }
-    .selector {
-        margin: 20px;
-    }
-    #parameterInputs {
-        margin-top: 20px;
-        display: block;
-        text-align: left;
-        max-width: 200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    #parameterInputs label, #parameterInputs input {
-        display: block;
-        margin-bottom: 10px;
-    }
-    .night-mode {
-        background-color: #121212;
-        color: #e0e0e0;
-    }
-    .night-mode button, .night-mode input, .night-mode select {
-        background-color: #333;
-        color: #e0e0e0;
-        border: 1px solid #444;
-    }
-    .night-mode #copyButton {
-        background-color: #444;
-    }
-    .night-mode hr {
-        border-color: #444;
-    }
-</style>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>怪物生成</title>
+    <script src="./assets/js/import.js"></script>
+    <link href='https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' />
+    <link href="./assets/css/typora.css" rel="stylesheet">
+    <link href="./assets/css/style.css" rel="stylesheet">
 </head>
+
 <body class='typora-export os-windows'>
-<div id='write' class=''>
-<h1>怪物生成</h1>
-<button id="modeToggle">切换夜间模式</button>
+    <div id='write' class=''>
+        <h1>怪物生成</h1>
+        <div>
+            <label>
+                <input type="radio" name="modeOption" value="auto-night" checked> 夜间模式
+            </label>
+            <label>
+                <input type="radio" name="modeOption" value="auto-day"> 日间模式
+            </label>
+        </div>
 
-<select id="monsterSelect" class="selector">
-<option value="">请选择<b>局外显示怪物</b></option>
-<!-- 动态插入局外显示怪物的选项 -->
-</select>
+        <select id="monsterSelect" class="selector">
+            <option value="">请选择<b>局外显示怪物</b></option>
+            <!-- 动态插入局外显示怪物的选项 -->
+        </select>
 
-<select id="stageSelect" class="selector">
-<option value="">选择局内战斗怪物</option>
-<!-- 动态插入局内战斗怪物的选项 -->
-</select>    
+        <select id="stageSelect" class="selector">
+            <option value="">选择局内战斗怪物</option>
+            <!-- 动态插入局内战斗怪物的选项 -->
+        </select>
 
-<div id="parameterInputs">
-    <label for="quantityInput">数量：</label>
-    <input type="number" id="quantityInput" placeholder="数量" value="1" />
-    <label for="levelInput">等级：</label>
-    <input type="number" id="levelInput" placeholder="等级" value="90" />
-    <label for="radiusInput">半径：</label>
-    <input type="number" id="radiusInput" placeholder="半径" value="1" />
-</div>
-<!-- <p><button id="pairButton"><b><span>生成指令</span></b></button></p> -->
-<div id="result">
-    指令：<input type="text" id="commandBox" readonly="">
-    <button id="copyButton"><b>复制指令</b></button>
-</div>
+        <div id="parameterInputs">
+            <label for="quantityInput">数量：</label>
+            <input type="number" id="quantityInput" placeholder="数量" value="1" />
+            <label for="levelInput">等级：</label>
+            <input type="number" id="levelInput" placeholder="等级" value="90" />
+            <label for="radiusInput">半径：</label>
+            <input type="number" id="radiusInput" placeholder="半径" value="1" />
+        </div>
+        <!-- <p><button id="pairButton"><b><span>生成指令</span></b></button></p> -->
+        <div id="result">
+            指令：<input type="text" id="commandBox" readonly="">
+            <button id="copyButton"><b>复制指令</b></button>
+        </div>
 
-<center><hr width="500"></center>
+        <center>
+            <hr width="500">
+        </center>
 
-<p><b>Tip:其实还有一种生成怪物的指令</b></p>
-<p><b>内容格式为</b></p>
-<p>/spawn [局外怪物id] lv(等级)  (想要在局内发生战斗的怪物id，可以有多个，只能使用<b>局外id</b>，不能使用局内id)</p>
-<p>局外id可看上方的选择框</p>
-<p><b>例如：<big>/spawn 3024020 lv90  3024020 3024020 3024020 3024020</big></b></p>
-<p><b>意思就是，它会在你周围生成一个90级萨姆，但你进战斗会发现是四个90级萨姆</b></p>
-<p><b>3024020 是萨姆的局外战斗id</b></p>
-<center><hr width="500"></center>
-<p>&copy; 2024 Design By QiuSYan</p>
-<p>Have Fun!</p>
-<script src="./assets/js/command.js"></script>
-<script>
-    document.getElementById('modeToggle').addEventListener('click', function() {
-        document.body.classList.toggle('night-mode');
-    });
-</script>
-</div>
+        <p><b>Tip:其实还有一种生成怪物的指令</b></p>
+        <p><b>内容格式为</b></p>
+        <p>/spawn [局外怪物id] lv(等级) (想要在局内发生战斗的怪物id，可以有多个，只能使用<b>局外id</b>，不能使用局内id)</p>
+        <p>局外id可看上方的选择框</p>
+        <p><b>例如：<big>/spawn 3024020 lv90 3024020 3024020 3024020 3024020</big></b></p>
+        <p><b>意思就是，它会在你周围生成一个90级萨姆，但你进战斗会发现是四个90级萨姆</b></p>
+        <p><b>3024020 是萨姆的局外战斗id</b></p>
+        <center>
+            <hr width="500">
+        </center>
+        <p>&copy; 2024 Design By QiuSYan</p>
+        <p>Have Fun!</p>
 
+    </div>
+    <script src="./assets/js/command.js"></script>
+    <script src="./assets/js/nightmode.js"></script>
 </body>
+
 </html>
