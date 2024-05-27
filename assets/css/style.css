@@ -6,7 +6,7 @@ body {
 
 .selector {
     margin: 20px;
-    
+
 }
 
 #parameterInputs {
@@ -55,24 +55,24 @@ body {
     outline: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  /* 选中的选项卡按钮样式 */
-  .tablinks.active {
+}
+
+/* 选中的选项卡按钮样式 */
+.tablinks.active {
     background-color: #555;
     color: white;
-  }
-  
-  /* 夜间模式下的选项卡按钮样式 */
-  .night-mode .tablinks {
+}
+
+/* 夜间模式下的选项卡按钮样式 */
+.night-mode .tablinks {
     background-color: #333;
     color: #ccc;
-  }
-  
-  .night-mode .tablinks.active {
+}
+
+.night-mode .tablinks.active {
     background-color: #ccc;
     color: #333;
-  }
+}
 
 
 /* 选择框默认样式 */
@@ -93,74 +93,112 @@ select {
     background-position: right 10px center;
     background-size: 16px;
     cursor: pointer;
-    letter-spacing: 0.5px; /* 增加字符间距 */
-  }
+    letter-spacing: 0.5px;
+    /* 增加字符间距 */
+}
 
-  /* 选择框获取焦点时的样式 */
-  select:focus {
+/* 选择框获取焦点时的样式 */
+select:focus {
     border-color: #66afe9;
     box-shadow: 0 0 0 3px rgba(102, 175, 233, 0.3);
-  }
-  
+}
+
 /* 夜间模式下的选择框样式 */
 .night-mode select {
-  background-color: #333;
-  color: #ccc;
-  border-color: #555;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
-  letter-spacing: 0.5px; /* 增加字符间距 */
+    background-color: #333;
+    color: #ccc;
+    border-color: #555;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ccc'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+    letter-spacing: 0.5px;
+    /* 增加字符间距 */
 }
-  
-  .night-mode select:focus {
+
+.night-mode select:focus {
     border-color: #66afe9;
     box-shadow: 0 0 0 3px rgba(102, 175, 233, 0.3);
-  }
+}
 
 
-  /* 输入框样式 */
+/* 输入框样式 */
 input[type="number"],
 input[type="text"] {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 8px 12px;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #555;
-  outline: none;
-  letter-spacing: 0.5px; /* 增加字符间距 */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+    outline: none;
+    letter-spacing: 0.5px;
+    /* 增加字符间距 */
 }
 
 /* 输出框样式 */
 #result input[type="text"] {
-  background-color: #f5f5f5;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 8px 12px;
-  font-size: 16px;
-  line-height: 1.5;
-  color: #333;
-  outline: none;
-  letter-spacing: 0.5px; /* 增加字符间距 */
-  width: 50%;
-  box-sizing: border-box;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    outline: none;
+    letter-spacing: 0.5px;
+    /* 增加字符间距 */
+    width: 50%;
+    box-sizing: border-box;
 }
 
 /* 夜间模式下的输入框和输出框样式 */
 .night-mode input[type="number"],
 .night-mode input[type="text"] {
-  background-color: #333;
-  color: #ccc;
-  border-color: #555;
-  letter-spacing: 0.5px; /* 增加字符间距 */
+    background-color: #333;
+    color: #ccc;
+    border-color: #555;
+    letter-spacing: 0.5px;
+    /* 增加字符间距 */
 }
 
 .night-mode #result input[type="text"] {
-  background-color: #555;
-  color: #ccc;
-  border-color: #777;
-  letter-spacing: 0.5px; /* 增加字符间距 */
+    background-color: #555;
+    color: #ccc;
+    border-color: #777;
+    letter-spacing: 0.5px;
+    /* 增加字符间距 */
+}
+
+.github-corner:hover .octo-arm {
+    animation: octocat-wave 560ms ease-in-out
+}
+
+@keyframes octocat-wave {
+
+    0%,
+    100% {
+        transform: rotate(0)
+    }
+
+    20%,
+    60% {
+        transform: rotate(-25deg)
+    }
+
+    40%,
+    80% {
+        transform: rotate(10deg)
+    }
+}
+
+@media (max-width:500px) {
+    .github-corner:hover .octo-arm {
+        animation: none
+    }
+
+    .github-corner .octo-arm {
+        animation: octocat-wave 560ms ease-in-out
+    }
 }
