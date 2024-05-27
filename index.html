@@ -23,35 +23,137 @@
             </label>
         </div>
 
-        <select id="monsterSelect" class="selector">
-            <option value="">请选择<b>局外显示怪物</b></option>
-            <!-- 动态插入局外显示怪物的选项 -->
-        </select>
+        <br/>
 
-        <select id="stageSelect" class="selector">
-            <option value="">选择局内战斗怪物</option>
-            <!-- 动态插入局内战斗怪物的选项 -->
-        </select>
-
-        <div id="parameterInputs">
-            <label for="quantityInput">数量：</label>
-            <input type="number" id="quantityInput" placeholder="数量" value="1" />
-            <label for="levelInput">等级：</label>
-            <input type="number" id="levelInput" placeholder="等级" value="90" />
-            <label for="radiusInput">半径：</label>
-            <input type="number" id="radiusInput" placeholder="半径" value="1" />
+        <!-- 添加选项卡 -->
+        <div class="tab">
+            <button class="tablinks" onclick="openTab(event, 'method1')" id="defaultOpen">第一种</button>
+            <button class="tablinks" onclick="openTab(event, 'method2')">第二种</button>
+            <button class="tablinks" onclick="openTab(event, 'method3')">第三种</button>
         </div>
-        <!-- <p><button id="pairButton"><b><span>生成指令</span></b></button></p> -->
-        <div id="result">
-            指令：<input type="text" id="commandBox" readonly="">
-            <button id="copyButton"><b>复制指令</b></button>
+
+        <br/>
+
+        <!-- 第一种方法的内容 -->
+        <div id="method1" class="tabcontent">
+            <p><b><big>分别选择局内外怪物</big></b></p>
+            <select id="monsterSelect1" class="selector">
+                <option value="">选择局外显示怪物</option>
+                <!-- 动态插入局外显示怪物的选项 -->
+            </select>
+            <select id="stageSelect1" class="selector">
+                <option value="">选择局内战斗怪物</option>
+                <!-- 动态插入局内战斗怪物的选项 -->
+            </select>
+            <div id="parameterInputs">
+                <label for="quantityInput1">数量：</label>
+                <input type="number" id="quantityInput1" placeholder="数量" value="1" />
+                <label for="levelInput1">等级：</label>
+                <input type="number" id="levelInput1" placeholder="等级" value="90" />
+                <label for="radiusInput1">半径：</label>
+                <input type="number" id="radiusInput1" placeholder="半径" value="1" />
+            </div>
+            <div id="result">
+                指令：<input type="text" id="commandBox1" readonly="">
+                <button id="copyButton1"><b>复制指令</b></button>
+            </div>
+
+            <center>
+                <hr width="500">
+            </center>
+            <p><b>这里的局内怪物可以选择所有在游戏中出现过的战斗内怪物</b></p>
+            <p><b>比如说可可利亚的大冰坨子、银枝的枪盾、砂金的骰子、还有星期日boss前面的小人</b></p>
+
+        </div>
+
+        <!-- 第二种方法的内容 -->
+        <div id="method2" class="tabcontent">
+            <p><b><big>局外怪物与局内怪物使用相同数据</big></b></p>
+            <select id="monsterSelect2" class="selector">
+                <option value="">选择局外显示怪物</option>
+                <!-- 动态插入局外显示怪物的选项 -->
+            </select>
+            <select id="stageSelect2" class="selector">
+                <option value="">选择局内战斗怪物</option>
+                <!-- 动态插入局内战斗怪物的选项 -->
+            </select>
+            <div id="parameterInputs">
+                <label for="quantityInput2">数量：</label>
+                <input type="number" id="quantityInput2" placeholder="数量" value="1" />
+                <label for="levelInput2">等级：</label>
+                <input type="number" id="levelInput2" placeholder="等级" value="90" />
+                <label for="radiusInput2">半径：</label>
+                <input type="number" id="radiusInput2" placeholder="半径" value="1" />
+            </div>
+            <div id="result">
+                指令：<input type="text" id="commandBox2" readonly="">
+                <button id="copyButton2"><b>复制指令</b></button>
+            </div>
+            <center>
+                <hr width="500">
+            </center>
+            <p>这里的局内怪物只能选择游戏中出现过的<b>已实体建模怪物</b></p>
+            <p><b>就是你在打模拟宇宙、大世界探索中看到过的怪</b></p>
+            <p><b>这种方法生成不了怪物的召唤物</b></p>
+        </div>
+
+
+        <div id="method3" class="tabcontent">
+            <p><b><big>自定义局内怪物数量</big></b></p>
+            <div>
+                <select id="monsterSelect3" class="selector">
+                    <option value="">选择局外显示怪物</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <select id="stageSelect3" class="selector">
+                    <option value="">选择必选的局内战斗怪物</option>
+                </select>
+                <select id="stageSelect4" class="selector">
+                    <option value="">选择可选的局内战斗怪物</option>
+                </select>
+                <select id="stageSelect5" class="selector">
+                    <option value="">选择可选的局内战斗怪物</option>
+                </select>
+                <select id="stageSelect6" class="selector">
+                    <option value="">选择可选的局内战斗怪物</option>
+                </select>
+                <select id="stageSelect7" class="selector">
+                    <option value="">选择可选的局内战斗怪物</option>
+                </select>
+                <select id="stageSelect8" class="selector">
+                    <option value="">选择可选的局内战斗怪物</option>
+                </select>
+            </div>
+            <div id="parameterInputs">
+                <label for="quantityInput3">数量：</label>
+                <input type="number" id="quantityInput3" placeholder="数量" value="1" />
+                <label for="levelInput3">等级：</label>
+                <input type="number" id="levelInput3" placeholder="等级" value="90" />
+                <label for="radiusInput3">半径：</label>
+                <input type="number" id="radiusInput3" placeholder="半径" value="1" />
+            </div>
+            <div id="result">
+                指令：<input type="text" id="commandBox3" readonly="">
+                <button id="copyButton3"><b>复制指令</b></button>
+            </div>
+
+
+            <center>
+                <hr width="500">
+            </center>
+            <p><b>第三种生成方法可以让你自定义局内怪物的数量</b></p>
+            <p><b>比如说你在局内怪物选择框中选了四个萨姆</b></p>
+            <p><b>那么你进战斗之后就会发现有四个萨姆了</b></p>
+            <del>什么废话文学</del>
         </div>
 
         <center>
             <hr width="500">
         </center>
 
-        <p><b>Tip:其实还有一种生成怪物的指令</b></p>
+        <!-- <p><b>Tip:其实还有一种生成怪物的指令</b></p>
         <p><b>内容格式为</b></p>
         <p>/spawn [局外怪物id] lv(等级) (想要在局内发生战斗的怪物id，可以有多个，只能使用<b>局外id</b>，不能使用局内id)</p>
         <p>局外id可看上方的选择框</p>
@@ -60,13 +162,25 @@
         <p><b>3024020 是萨姆的局外战斗id</b></p>
         <center>
             <hr width="500">
+        </center> -->
+
+        <p><b>极度建议局外战斗怪物选择能被黄泉一刀秒的</b></p>
+        <p>不然万一你生成个打不动的东西就悲剧了<b>（比如说不会受到伤害的砂金骰子</b></p>
+
+        <center>
+            <hr width="500">
         </center>
+
         <p>&copy; 2024 Design By QiuSYan</p>
+        <p>For LunarCore 2.2.0</p>
         <p>Have Fun!</p>
 
     </div>
     <script src="./assets/js/command.js"></script>
     <script src="./assets/js/nightmode.js"></script>
+    <!-- JavaScript代码用于切换选项卡内容 -->
+    <script src="./assets/js/tab.js"></script>
+
 </body>
 
 </html>

@@ -6,6 +6,7 @@ body {
 
 .selector {
     margin: 20px;
+    
 }
 
 #parameterInputs {
@@ -43,3 +44,32 @@ body {
 .night-mode hr {
     border-color: #444;
 }
+
+
+/* 选项卡按钮默认样式 */
+.tablinks {
+    background-color: #ccc;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* 选中的选项卡按钮样式 */
+  .tablinks.active {
+    background-color: #555;
+    color: white;
+  }
+  
+  /* 夜间模式下的选项卡按钮样式 */
+  .night-mode .tablinks {
+    background-color: #333;
+    color: #ccc;
+  }
+  
+  .night-mode .tablinks.active {
+    background-color: #ccc;
+    color: #333;
+  }
