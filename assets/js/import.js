@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('stageSelect5').appendChild(option.cloneNode(true));
                 document.getElementById('stageSelect6').appendChild(option.cloneNode(true));
                 document.getElementById('stageSelect7').appendChild(option.cloneNode(true));
-                document.getElementById('stageSelect8').appendChild(option.cloneNode(true)); //第三种
+                // document.getElementById('stageSelect8').appendChild(option.cloneNode(true)); //第三种
             });
         });
 

@@ -19,7 +19,7 @@ const stageSelect4 = document.getElementById('stageSelect4');
 const stageSelect5 = document.getElementById('stageSelect5');
 const stageSelect6 = document.getElementById('stageSelect6');
 const stageSelect7 = document.getElementById('stageSelect7');
-const stageSelect8 = document.getElementById('stageSelect8');
+// const stageSelect8 = document.getElementById('stageSelect8');
 const quantityInput3 = document.getElementById('quantityInput3');
 const levelInput3 = document.getElementById('levelInput3');
 const radiusInput3 = document.getElementById('radiusInput3');
@@ -44,7 +44,7 @@ stageSelect4.addEventListener('change', updateCommand3);
 stageSelect5.addEventListener('change', updateCommand3);
 stageSelect6.addEventListener('change', updateCommand3);
 stageSelect7.addEventListener('change', updateCommand3);
-stageSelect8.addEventListener('change', updateCommand3);
+// stageSelect8.addEventListener('change', updateCommand3);
 quantityInput3.addEventListener('input', updateCommand3);
 levelInput3.addEventListener('input', updateCommand3);
 radiusInput3.addEventListener('input', updateCommand3);
@@ -87,7 +87,7 @@ function updateCommand3() {
     const selectedStage5 = stageSelect5.value;
     const selectedStage6 = stageSelect6.value;
     const selectedStage7 = stageSelect7.value;
-    const selectedStage8 = stageSelect8.value;
+    // const selectedStage8 = stageSelect8.value;
     const quantity3 = quantityInput3.value;
     const level3 = levelInput3.value;
     const radius3 = radiusInput3.value;
@@ -95,7 +95,7 @@ function updateCommand3() {
     const stageIds = [selectedStage3, selectedStage4, selectedStage5, selectedStage6, selectedStage7, selectedStage8].filter(id => id !== '');
 
     if (selectedMonster3 && stageIds.length > 0 && quantity3 && level3 && radius3) {
-        const command = `/spawn ${selectedMonster3} x${quantity3} lv${level3} r${radius3} ${selectedStage3} ${selectedStage4} ${selectedStage5} ${selectedStage6} ${selectedStage7} ${selectedStage8}`;
+        const command = `/spawn ${selectedMonster3} x${quantity3} lv${level3} r${radius3} ${selectedStage3} ${selectedStage4} ${selectedStage5} ${selectedStage6} ${selectedStage7}`;
         commandBox3.value = command;
     } else {
         commandBox3.value = '';
