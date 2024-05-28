@@ -92,7 +92,7 @@ function updateCommand3() {
     const level3 = levelInput3.value;
     const radius3 = radiusInput3.value;
 
-    const stageIds = [selectedStage3, selectedStage4, selectedStage5, selectedStage6, selectedStage7, selectedStage8].filter(id => id !== '');
+    const stageIds = [selectedStage3, selectedStage4, selectedStage5, selectedStage6, selectedStage7].filter(id => id !== '');
 
     if (selectedMonster3 && stageIds.length > 0 && quantity3 && level3 && radius3) {
         const command = `/spawn ${selectedMonster3} x${quantity3} lv${level3} r${radius3} ${selectedStage3} ${selectedStage4} ${selectedStage5} ${selectedStage6} ${selectedStage7}`;
